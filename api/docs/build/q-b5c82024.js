@@ -1,0 +1,1 @@
+import{k as t,a as o,_ as a}from"./q-c409971d.js";const _=t(o(()=>a(()=>import("./q-f54ba14d.js"),["build/q-f54ba14d.js","build/q-c409971d.js"]),"s_crp5PYqmBUM")),e={title:"Authorization API Docs"};export{_ as default,e as head};

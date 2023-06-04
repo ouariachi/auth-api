@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="en-us" q:render="static-ssr" q:container="paused" q:version="1.1.4" q:base="/build/" q:locale><!--qv q:id=0 q:key=vgNe:pc_0--><!--qv q:id=1 q:key=TxCF:Ff_3--><!--qv q:s q:sref=1 q:key=--><head q:head><meta charSet="utf-8" q:head><!--qv q:id=2 q:key=uGIf:Ff_0--><!--qv q:key=fe_3--><title q:head>Authorization API Docs</title><link rel="canonical" href="https://yoursite.qwik.dev/" q:id="3" q:head><meta name="viewport" content="width=device-width, initial-scale=1.0" q:head><link rel="icon" type="image/svg+xml" href="/favicon.svg" q:head><!--/qv--><!--/qv--><style data-src="/build/q-680bcd7c.css">*{box-sizing:border-box}:root{--user-font-scale: 1rem - 16px;--max-width:calc(100% - 1rem);--font-body: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;--font-mono: "IBM Plex Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;color-scheme:light;--theme-accent: #006ce9;--theme-text: #181818}@media (min-width: 50em){:root{--max-width: 46em}}body{display:flex;flex-direction:column;min-height:100vh;font-family:var(--font-body);font-size:1rem;font-size:clamp(.9rem,.75rem + .375vw + var(--user-font-scale),1rem);line-height:1.5;max-width:100vw;background:var(--theme-bg);color:var(--theme-text)}main{padding:10px 20px;max-width:960px;margin:0 auto}a{color:var(--theme-accent)}a:hover{text-decoration:none}code,kbd,samp,pre{font-family:var(--font-mono)}code{background-color:#e0e0e0;padding:2px 4px;border-radius:3px;font-size:.9em;border-bottom:2px solid #bfbfbf}html{-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji"}body{padding:0;line-height:inherit}
+</style><style q:style="lcydw1-0" hidden>:root{view-transition-name:none}</style></head><body lang="en"><!--qv q:id=4 q:key=e0ss:Ff_1--><!--qv q:key=zl_1--><!--qv q:id=5 q:key=crp5:zl_0--><main q:key="iK_0"><h1>Authorization API</h1><h2>Routes:</h2><ul><li><h3>/auth/login (POST)</h3>In this path you can authorize yourself by providing the following parameters in the body of the request:<ul><li><b>username</b></li><li><b>password</b></li><li><b>grant_type</b>: Must be "password"</li></ul><br>Output:<pre><code lang="json" style="width:100%;display:block">
+  {
+    "success: true,
+    "tokens": {
+        "accessToken": "...",
+        "refreshToken": "...",
+        "expiration": "..."
+    },
+    "user": {
+        "username": "...",
+        "email": "...",
+        "date": "...",
+        "lastConnection": "...",
+        "name": { 
+          "firstname": "...",
+          "lastname": "..."
+        },
+        "roles": [...]
+    }
+  }
+              </code></pre></li><br><li><h3>/auth/register (POST)</h3>In this path you can register by providing the following parameters in the body of the request:<ul><li> <b>username</b> </li><li> <b>password</b> </li><li> <b>grant_type: Must be "client_credentials"</b> </li><li> <b>email (optional)</b> </li><li> <b>firstname (optional)</b> </li><li> <b>lastname (optional)</b> </li></ul><br>Output:<pre><code lang="json" style="width:100%;display:block">{ success: true }</code></pre></li><br><li><h3>/auth/refresh (POST)</h3>In this path you can refresh your token by providing the following parameters in the body of the request:<ul><li> <b>refreshToken</b> </li><li> <b>grant_type: Must be "refresh_token"</b> </li></ul><br>Output:<pre><code lang="json" style="width:100%;display:block">
+{ 
+  "success": true,
+  "token": {
+    "accessToken": "...",
+    "refreshToken": "...",
+    "expiration": "..."
+  }
+}
+              </code></pre></li></ul></main><!--/qv--><script>(function(){
+  const l=location,c=l.pathname+l.search,t="_qCityPopstateFallback",o="_qCityHistory";window[t]||(window[t]=()=>{window[o]||c===(l.pathname+l.search)||l.reload()},setTimeout(()=>{addEventListener("popstate",window[t])},0))
+})();
+</script><!--/qv--><!--/qv--><!--qv q:key=Ff_2--><script q:key="1Z_0">((s,a,i,r)=>{i=(e,t)=>{t=document.querySelector("[q\\:base]"),t&&a.active&&a.active.postMessage({type:"qprefetch",base:t.getAttribute("q:base"),...e})},document.addEventListener("qprefetch",e=>{const t=e.detail;a?i(t):t.bundles&&s.push(...t.bundles)}),navigator.serviceWorker.register("/service-worker.js").then(e=>{r=()=>{a=e,i({bundles:s})},e.installing?e.installing.addEventListener("statechange",t=>{t.target.state=="activated"&&r()}):e.active&&r()}).catch(e=>console.error(e))})([])</script><!--/qv--></body><!--/qv--><!--/qv--><!--/qv--><script type="qwik/json">{"refs":{},"ctx":{},"objs":[],"subs":[]}</script></html>
