@@ -4,6 +4,7 @@ import { authRouter } from "./routers/auth.js";
 import bodyParser from "body-parser";
 import path from "path";
 import { fileURLToPath } from 'url';
+import cors from "cors";
 
 const __filename = fileURLToPath(import.meta.url); // __filename is not defined in ES module scope
 const __dirname = path.dirname(__filename); // __dirname is not defined in ES module scope
@@ -11,6 +12,7 @@ const __dirname = path.dirname(__filename); // __dirname is not defined in ES mo
 const app = express();
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(cors());
 
 app.use("/auth", authRouter);
 app.use("/", express.static(path.join(__dirname, "docs")));
