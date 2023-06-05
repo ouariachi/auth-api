@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node -r dotenv/config .",
-    "dev": "nodemon -r dotenv/config .",
+    "start": "node .",
+    "dev": "nodemon .",
     "test": "jest"
   },
   "author": "Ouariachi",
