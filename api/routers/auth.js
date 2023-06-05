@@ -1,9 +1,7 @@
 import express from "express";
 import { UserModel } from "../../db/models/user.js";
 import { TokenModel } from "../../db/models/token.js";
-import LogManager from "../../logs/index.js";
 
-const logMng = new LogManager();
 
 export const authRouter = express.Router();
 
@@ -52,8 +50,6 @@ authRouter.post("/login", async (req, res) => {
         scopes: ["user"]
     });
     token.setTokens();
-    logMng.auth(`[login] user:${username} date:${new Date().toISOString()} ip:${req.ip} token:${token.toJSON()}`);
-    logMng.token(`[create] user:${username} date:${new Date().toISOString()} accessToken:${token.accessToken}`);
     
     if(!await token.save()) {
         res.status(500).json({
@@ -132,7 +128,6 @@ authRouter.post("/register", async (req, res) => {
         return;
     }
 
-    logMng.auth(`[register] user:${user.username} date:${new Date().toISOString()}`);
 
     res.status(200).json({
         success: true
@@ -154,7 +149,6 @@ authRouter.post("/refresh", async (req, res) => {
         return;
     }
 
-    const log = `[refresh] user:${token.username} from:${token.accessToken}} to:${token.refreshToken}`;
     token.refresh();
 
     if(!await token.save()) {
@@ -165,7 +159,6 @@ authRouter.post("/refresh", async (req, res) => {
         return;
     }
 
-    logMng.token(log);
     res.status(200).json({
         success: true,
         token: {
